@@ -1,16 +1,16 @@
 document.getElementById('prediction-form').addEventListener('submit', function(event) {
     event.preventDefault();
-
-    const date = document.getElementById('date').value;
+    
+    const openPrice = document.getElementById('openPrice').value;
     const predictionElement = document.getElementById('prediction');
     const button = this.querySelector('button');
 
     // Disable the button and show loading state
     button.disabled = true;
     button.textContent = 'Predicting...';
-    predictionElement.textContent = '--.-';
+    predictionElement.textContent = '--.--';
 
-    const data = { Date: date };
+    const data = { Open: parseFloat(openPrice) };
 
     fetch('/predict', {
         method: 'POST',
