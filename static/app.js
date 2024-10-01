@@ -52,5 +52,6 @@ function animateValue(element, start, end, duration) {
             window.requestAnimationFrame(step);
         }
     };
+    document.getElementById("openPrice").value = "";
     window.requestAnimationFrame(step);
 }
